@@ -1,0 +1,4 @@
+.card { background:var(--white); border-radius:var(--radius-md); padding:var(--space-6); box-shadow:var(--shadow-sm); transition:transform .25s, box-shadow .25s; }
+.card:hover { transform:translateY(-6px); box-shadow:var(--shadow-md); }
+.card h3 { margin:.8rem 0 .4rem; }
+.card svg { color:var(--brand-500); }

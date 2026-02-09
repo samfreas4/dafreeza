@@ -1,0 +1,4 @@
+.image-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:.75rem; }
+.img-btn { border:none; padding:0; background:transparent; border-radius:.75rem; overflow:hidden; cursor:pointer; box-shadow:var(--shadow-sm); }
+.img-btn img { width:100%; aspect-ratio: 4/3; object-fit:cover; transition:transform .25s; }
+.img-btn:hover img { transform:scale(1.03); }

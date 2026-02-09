@@ -1,0 +1,4 @@
+.contact-form { background:var(--white); border-radius:var(--radius-md); box-shadow:var(--shadow-sm); padding:1.25rem; display:grid; gap:.5rem; }
+.contact-form input, .contact-form textarea { width:100%; margin-top:.25rem; border:1px solid #cbd5e1; border-radius:.5rem; padding:.65rem; font:inherit; }
+.error { color:var(--error); font-size:.9rem; }
+.success { color:var(--success); font-weight:600; }
