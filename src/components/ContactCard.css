@@ -1,0 +1,2 @@
+.contact-card { background:var(--white); border-radius:var(--radius-md); box-shadow:var(--shadow-sm); padding:1.25rem; }
+.contact-card p { display:flex; gap:.6rem; align-items:center; color:var(--ink-700); }

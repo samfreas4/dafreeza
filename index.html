@@ -1,189 +1,22 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Expense Tracker</title>
-  <style>
-    body {
-      font-family: ALucida Consolerial, Monospace;
-      background-color: #001aff;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      color: white;
-    }
-    #login-screen, #tracker-screen {
-      background: #012bff;
-      padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-      width: 90%;
-      max-width: 400px;
-    }
-    h1, h2, h3 {
-      text-align: center;
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-    }
-    form input {
-      padding: 10px;
-      margin: 5px 0;
-      border: 1px solid #ccc;
-      border-radius: 3px;
-    }
-    form button {
-      padding: 10px;
-      background: #333;
-      color: #fff;
-      border: none;
-      border-radius: 3px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-    #expense-list {
-      list-style-type: none;
-      padding: 0;
-    }
-    #expense-list li {
-      background: #e4e4e4;
-      color: #000;
-      margin: 5px 0;
-      padding: 10px;
-      border-radius: 3px;
-    }
-    #login-error {
-      color: red;
-      display: none;
-      text-align: center;
-    }
-    #balance-section, #expense-section, #transactions-section {
-      margin-bottom: 20px;
-    }
-    #current-balance-display {
-      font-size: 20px;
-      text-align: center;
-      margin: 10px 0;
-    }
-  </style>
-</head>
-<body>
-  <!-- Login Screen -->
-  <div id="login-screen">
-    <h1>GET SCHMOONEY</h1>
-    <form id="login-form">
-      <label for="password">PIN:</label>
-      <input type="password" id="password" placeholder="Password" required>
-      <button type="submit">enter</button>
-      <p id="login-error">WRONG NIGGA!</p>
-    </form>
-  </div>
-
-  <!-- Tracker Screen -->
-  <div id="tracker-screen" style="display: none;">
-    <h1>$$ TRACKER</h1>
-    
-    <!-- Balance Section -->
-    <div id="balance-section">
-      <h2>Set Your Current Balance</h2>
-      <form id="balance-form">
-        <input type="number" id="initial-balance" placeholder="Enter current amount" step="0.01" required>
-        <button type="submit">Set Balance</button>
-      </form>
-      <h3 id="current-balance-display" style="display: none;">Current Balance: $0.00</h3>
-    </div>
-
-    <!-- Expense Section -->
-    <div id="expense-section" style="display: none;">
-      <h2>Add an Expense</h2>
-      <form id="expense-form">
-        <input type="text" id="description" placeholder="Expense Description" required>
-        <input type="number" id="amount" placeholder="Expense Amount" step="0.01" required>
-        <button type="submit">Add Expense</button>
-      </form>
-    </div>
-
-    <!-- Transactions Section -->
-    <div id="transactions-section" style="display: none;">
-      <h2>Transactions</h2>
-      <ul id="expense-list"></ul>
-    </div>
-  </div>
-
-  <script>
-    // Login functionality
-    const loginForm = document.getElementById('login-form');
-    const loginScreen = document.getElementById('login-screen');
-    const trackerScreen = document.getElementById('tracker-screen');
-    const loginError = document.getElementById('login-error');
-
-    loginForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const password = document.getElementById('password').value;
-      if (password === "1125") {
-        loginScreen.style.display = 'none';
-        trackerScreen.style.display = 'block';
-      } else {
-        loginError.style.display = 'block';
-      }
-    });
-
-    // Expense Tracker functionality
-    const balanceForm = document.getElementById('balance-form');
-    const initialBalanceInput = document.getElementById('initial-balance');
-    const currentBalanceDisplay = document.getElementById('current-balance-display');
-    const expenseSection = document.getElementById('expense-section');
-    const expenseForm = document.getElementById('expense-form');
-    const expenseList = document.getElementById('expense-list');
-    const transactionsSection = document.getElementById('transactions-section');
-
-    let currentBalance = 0;
-
-    // Set the initial balance
-    balanceForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const balance = parseFloat(initialBalanceInput.value);
-      if (!isNaN(balance)) {
-        currentBalance = balance;
-        currentBalanceDisplay.style.display = 'block';
-        updateBalanceDisplay();
-        // Show expense form and transactions after setting balance
-        expenseSection.style.display = 'block';
-        transactionsSection.style.display = 'block';
-        // Hide the balance form to prevent resetting during the session
-        balanceForm.style.display = 'none';
-      }
-    });
-
-    // Update the balance display
-    function updateBalanceDisplay() {
-      currentBalanceDisplay.textContent = 'Current Balance: $' + currentBalance.toFixed(2);
-    }
-
-    // Add expense functionality
-    expenseForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const description = document.getElementById('description').value;
-      const amount = parseFloat(document.getElementById('amount').value);
-      if (!description || isNaN(amount)) return;
-
-      // Deduct the expense from the current balance
-      currentBalance -= amount;
-      updateBalanceDisplay();
-
-      // Add the expense to the transaction list
-      const li = document.createElement('li');
-      li.textContent = `${description}: -$${amount.toFixed(2)}`;
-      expenseList.appendChild(li);
-
-      // Reset the expense form
-      expenseForm.reset();
-    });
-  </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Powell’s All Around Property Services LLC in Tallahassee, FL for repairs, cleanup, pressure washing, yard help, and dependable handyman work." />
+    <meta property="og:title" content="Powell’s All Around Property Services LLC" />
+    <meta property="og:description" content="Reliable property services in Tallahassee, FL. Request a quote today." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://example.com" />
+    <meta property="og:image" content="/logo-placeholder.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <title>Powell’s All Around Property Services LLC | Tallahassee, FL</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

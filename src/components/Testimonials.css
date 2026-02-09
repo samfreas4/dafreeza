@@ -1,0 +1,8 @@
+.slider { overflow:hidden; background:var(--white); border-radius:var(--radius-lg); box-shadow:var(--shadow-sm); }
+.track { display:flex; transition: transform .45s ease; }
+.slide { min-width:100%; padding:2rem; margin:0; }
+.slide blockquote { font-size:1.1rem; line-height:1.6; margin:0 0 .75rem; }
+.controls { display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--bg-100); padding:.5rem .8rem; }
+.controls button { border:none; background:transparent; font-size:1.15rem; cursor:pointer; color:var(--ink-700); }
+.dots button { width:10px; height:10px; border-radius:999px; margin:0 .25rem; background:#cbd5e1; }
+.dots button.active { background:var(--brand-500); }

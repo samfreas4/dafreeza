@@ -1,0 +1,3 @@
+.faq-item { border-bottom:1px solid #d7e2ea; }
+.faq-btn { width:100%; text-align:left; border:0; background:transparent; display:flex; justify-content:space-between; padding:1rem 0; font-weight:700; cursor:pointer; }
+.faq-item p { margin:0 0 1rem; color:var(--ink-700); }
